@@ -1,26 +1,27 @@
 ***USER STORIES***
 
 -Welcome page should display a brief overview of website mission statement
--User are able to create an account and be logged in
+-Users are able to create an account and be logged in automatically upon clicking 'Create Account'
 -User should be able to log out from their session by clicking 'Log Out'
--When user clicks register they are taken to the profile for their newly created account
--User's profile page should show their gear watch list of items they have saved from posts
--User should be able to create an artist page if one does not exist
--User should be able to create an entry for a guitar identification (ID) of a musician they know
--
+-When User clicks register they are taken to the Band Index page
+-User should be able to create a 'Band' page if one does not exist
+-Once the User fills out the fields for image URL, Band Name and Guitarist and click 'Add Band', they should be taken to 'Band Index' page and see the newly added band listed 
+-User should be able to create an entry for a new guitar identification of a specific musician
+-Once the User fills out the fields for image URL, Guitar Manufacturer, Model, Year and Finish and clicks 'Add Guitar', they should be taken to that band's page and see the newly added guitar listed
+-User should be able to edit a listing for a guitar and update it with any corrections they may have
 
 
 ***NICE TO HAVES***
-
--Users can submit entries for other gear (such as amps, guitar pedals, cables, etc.)
--Users can see other guitarists that use a specific guitar make/model
--User has the option to 'follow' specific artists/band members and see future entries for that artist
--
-
+-Users can select specific guitars via Reverb.com database search function from the 'Add Guitar' page and use that entry instead of manually entering the info
+-Users can use Reverb API to search and shop for specific guitars from a Band's page
+-Users can submit entries for other related gear (such as amps, guitar pedals, cables, etc.)
+-User has the option to 'follow' specific artists/band members and see future entries for that band
 
 
 ***STRETCH GOALS***
--Search/filter by specific bands
+-User's profile page should show their gear watchlist of items they have saved from posts
+-Users can see other guitarists that use a specific guitar make/model
+
 
 ***Wireframes***
 
