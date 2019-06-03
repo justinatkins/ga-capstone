@@ -39,3 +39,5 @@
 * Add Band: https://imgur.com/1IDgF6g
 
 * Add Guitar: https://imgur.com/zDID75C
+
+* Guitar Show Page: https://imgur.com/Ps6iQqb
