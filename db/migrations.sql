@@ -5,22 +5,25 @@ CREATE DATABASE guitars;
 
 CREATE TABLE users(
 	id SERIAL PRIMARY KEY,
-	username VARCHAR(32),
-	password_digest VARCHAR(60)
+	username VARCHAR(64),
+	password_digest VARCHAR(120)
+);
+
+CREATE TABLE bands(
+	id SERIAL PRIMARY KEY, 
+	band_name VARCHAR(256),
+	guitarist_id INTEGER REFERENCES guitarists(id), 
+	added_by INTEGER REFERENCES users(id)
 );
 
 CREATE Table guitarists(
 	id SERIAL PRIMARY KEY,
 	band_url VARCHAR(2000),
 	name VARCHAR(128),
-	band VARCHAR(60) REFERENCES bands(id),
-	user_id INTEGER REFERENCES users(id)
+	added_by INTEGER REFERENCES users(id)
+	-- band_id VARCHAR(60) REFERENCES bands(id), 
 );
 
-CREATE TABLE bands ( 
-	band_name
-	...
-)
 
 CREATE TABLE guitars(
 	id SERIAL PRIMARY KEY,
@@ -28,13 +31,23 @@ CREATE TABLE guitars(
 	make VARCHAR(60),
 	model VARCHAR(60),
 	year SMALLINT,
-	finish VARCHAR(60)
+	finish VARCHAR(60),
+	added_by INTEGER REFERENCES users(id)
 );
 
-CREATE TABLE instrument_choices(
+CREATE TABLE instrument_choices_bands(
 	id SERIAL PRIMARY KEY,
-	band_id INTEGER REFERENCES bands(id)
+	band_id INTEGER REFERENCES bands(id),
+	guitar_id INTEGER REFERENCES guitars(id) 
+);
+
+CREATE TABLE instrument_choices_guitarists(
+	id SERIAL PRIMARY KEY,
 	guitar_id INTEGER REFERENCES guitars(id)
 );
 
+CREATE TABLE musicians_bands(
+	id SERIAL PRIMARY KEY,
+	guitarist_id INTEGER REFERENCES guitarists(id),
 
+);
