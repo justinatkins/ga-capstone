@@ -28,7 +28,12 @@ before do
 	post '/new' do
 
 		new_guitar = Guitar.new
-		new_guitar.guitar_name = params[:guitar_name]
+		new_guitar.guitar_image = params[:guitar_image]
+		new_guitar.guitar_make = params[:guitar_name]
+		new_guitar.guitar_model = params[:guitar_model]
+		new_guitar.guitar_year = params[:guitar_year]
+		new_guitar.guitar_finish = params[:guitar_finish]
+
 
 		logged_in_user = User.find_by({:username => session[:username]})
 		new_guitar.user_id = logged_in_user.id
@@ -56,7 +61,11 @@ before do
 	#Update Guitars
 	put '/:id' do
 		guitar_update = Guitar.find params[:id]
-		guitar_update.guitar_name = params[:guitar_name]
+		guitar_update.guitar_image = params[:guitar_image]
+		guitar_update.guitar_make = params[:guitar_name]
+		guitar_update.guitar_model = params[:guitar_model]
+		guitar_update.guitar_year = params[:guitar_year]
+		guitar_update.guitar_finish = params[:guitar_finish]
 		guitar_update.save
 
 		session[:message] = {

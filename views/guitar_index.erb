@@ -1,0 +1,17 @@
+<h2>Guitar Index</h2>
+<ul class="list-group">
+	<% @guitar.each do	|guitar| %>
+	<li>
+		<%= guitar.guitar_url %></br>
+		<%= guitar.guitar_year %></br>
+		<%= guitar.guitar_make %></br>
+		<%= guitar.guitar_model %></br>
+		<%= guitar.guitar_finish %></br>
+		<a href="/guitars/<%= guitar.id %>/edit">Edit Guitar</a>
+		<form action="/guitars/<%= guitar.id %>" method="POST">
+			<input type="hidden" name="_method" value="DELETE">
+			<button>Delete Guitar</button>
+		</form>
+	</li>
+	<% end %>
+</ul>

@@ -26,9 +26,9 @@ CREATE TABLE guitarists(
 CREATE TABLE guitars(
 	id SERIAL PRIMARY KEY,
 	guitar_url VARCHAR(2000),
+	year SMALLINT,
 	make VARCHAR(60),
 	model VARCHAR(60),
-	year SMALLINT,
 	finish VARCHAR(60),
 	added_by INTEGER REFERENCES users(id) 
 );
