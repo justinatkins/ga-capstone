@@ -40,4 +40,6 @@
 
 * Add Guitar: https://imgur.com/zDID75C
 
+* Add Guitarist: https://imgur.com/cZB4A8W
+
 * Guitar Show Page: https://imgur.com/Ps6iQqb
