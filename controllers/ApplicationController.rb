@@ -16,7 +16,7 @@ class ApplicationController < Sinatra::Base
 	set :public_dir, File.expand_path('../../public', __FILE__)
 
 	get '/' do
-		redirect '/recipes'
+		redirect '/home'
 	end
 
 	get '/test' do

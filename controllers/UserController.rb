@@ -16,7 +16,7 @@ class UserController < ApplicationController
 				status: "good",
 				message: "Logged in as #{user.username}"
 			}
-			redirect '/items'
+			redirect '/home'
 		else
 			session[:message] = {
 				success: false,

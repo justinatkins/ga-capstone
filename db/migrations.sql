@@ -12,18 +12,16 @@ CREATE TABLE users(
 CREATE TABLE bands(
 	id SERIAL PRIMARY KEY, 
 	band_name VARCHAR(256),
-	guitarist_id INTEGER REFERENCES guitarists(id), 
 	added_by INTEGER REFERENCES users(id)
 );
 
-CREATE Table guitarists(
+CREATE TABLE guitarists(
 	id SERIAL PRIMARY KEY,
 	band_url VARCHAR(2000),
 	name VARCHAR(128),
 	added_by INTEGER REFERENCES users(id)
-	-- band_id VARCHAR(60) REFERENCES bands(id), 
+	band_id VARCHAR(60) REFERENCES bands(id), -- guitarist belongs to band
 );
-
 
 CREATE TABLE guitars(
 	id SERIAL PRIMARY KEY,
@@ -32,22 +30,29 @@ CREATE TABLE guitars(
 	model VARCHAR(60),
 	year SMALLINT,
 	finish VARCHAR(60),
-	added_by INTEGER REFERENCES users(id)
+	added_by INTEGER REFERENCES users(id) 
 );
 
-CREATE TABLE instrument_choices_bands(
+CREATE TABLE instrument_choices(
 	id SERIAL PRIMARY KEY,
-	band_id INTEGER REFERENCES bands(id),
-	guitar_id INTEGER REFERENCES guitars(id) 
+	-- instr choice BELONGS TO guitarist
+	guitarist_id INTEGER REFERENCES guitarists(id), -- use thru table to get guitarists, then a loop to get band for each guitarist
+	guitar_id INTEGER REFERENCES guitars(id) # instrument choice BELONGS TO guitar
 );
 
-CREATE TABLE instrument_choices_guitarists(
-	id SERIAL PRIMARY KEY,
-	guitar_id INTEGER REFERENCES guitars(id)
-);
+-- CREATE TABLE musicians_bands(
+-- 	id SERIAL PRIMARY KEY,
+-- 	band_id INTEGER REFERENCES bands(id),
+-- 	guitarist_id INTEGER REFERENCES guitarists(id)
+-- );
 
-CREATE TABLE musicians_bands(
-	id SERIAL PRIMARY KEY,
-	guitarist_id INTEGER REFERENCES guitarists(id),
+-- CREATE TABLE instrument_choices_bands(
+-- 	id SERIAL PRIMARY KEY,
+-- 	band_id INTEGER REFERENCES bands(id),
+-- 	guitar_id INTEGER REFERENCES guitars(id) 
+-- );
 
-);
+
+
+
+

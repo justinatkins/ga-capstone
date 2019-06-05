@@ -1,4 +1,4 @@
 class InstrumentChoice < ActiveRecord::Base
-	belongs_to :band
-	belongs_to :guitar
+	belongs_to :guitarist
+	belongs_to :guitar	
 end
