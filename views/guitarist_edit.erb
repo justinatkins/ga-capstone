@@ -1,0 +1,12 @@
+<h2>Edit Guitarist</h2>
+<form action="/guitarist/<%= @guitarist.id %>" method="POST">
+	<input type="hidden" name="_method" value="PUT" />
+	Guitarist Pic:
+	<input type="url" name="guitarist_url" value="<%= @guitarist.guitarist_url %>" /></br>
+	Name:
+	<input type="text" name="name" value="<%= @guitarist.guitarist_url %>" /></br>
+		<button>Update Guitarist!</button>
+</form> 
+
+
+

@@ -1,0 +1,22 @@
+<h2>Guitarist Index</h2>
+<ul class="list-group">
+	<% @guitarist.each do |guitarist| %>
+	<li>
+		<%= @guitarist.guitarist_url %>
+		<%= @guitarist.name %>
+		<form action="/guitarists/<%= guitarist.id %>/edit" method="PUT">
+			<input type="hidden" name="_method" value="UPDATE">
+				<button>Edit Guitarist</button>
+		</form>
+		<form action="/guitarist/<%= guitarist.id %>" method="PUT">
+			<input type="hidden" name="_method" value="DELETE">
+				<button>Delete Guitarist</button>
+		</form>
+	</li>
+	<% end %>
+</ul>
+
+
+
+
+		
