@@ -5,22 +5,22 @@ CREATE DATABASE guitars;
 
 CREATE TABLE users(
 	id SERIAL PRIMARY KEY,
-	username VARCHAR(64),
-	password_digest VARCHAR(120)
+	username VARCHAR(32),
+	password_digest VARCHAR(60)
 );
 
 CREATE TABLE bands(
 	id SERIAL PRIMARY KEY, 
 	band_url VARCHAR(2000),
 	band_name VARCHAR(256),
-	added_by INTEGER REFERENCES users(id)
+	user_id INTEGER REFERENCES users(id)
 );
 
 CREATE TABLE guitarists(
 	id SERIAL PRIMARY KEY,
 	guitarist_url VARCHAR(2000),
 	name VARCHAR(128),
-	added_by INTEGER REFERENCES users(id)
+	user_id INTEGER REFERENCES users(id)
 	band_id VARCHAR(60) REFERENCES bands(id), -- guitarist belongs to band
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE guitars(
 	make VARCHAR(60),
 	model VARCHAR(60),
 	finish VARCHAR(60),
-	added_by INTEGER REFERENCES users(id) 
+	user_id INTEGER REFERENCES users(id) 
 );
 
 CREATE TABLE instrument_choices(

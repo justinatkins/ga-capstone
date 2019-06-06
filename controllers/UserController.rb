@@ -1,10 +1,16 @@
 class UserController < ApplicationController
 
+	#SHOW LOGIN PAGE
 	get '/login' do 
 		erb :login
 	end
 
+	#DO LOGIN PAGE
 	post '/login' do
+
+		puts "\n here is session before login"
+		pp session
+
 		user = User.find_by username: params[:username]
 		pw = params[:password]
 
@@ -14,9 +20,14 @@ class UserController < ApplicationController
 			session[:message] = {
 				success: true,
 				status: "good",
-				message: "Logged in as #{user.username}"
+				message: "Logged in as ##{user.username}"
 			}
-			redirect '/home'
+
+			puts "\n here is session after login, we are about to redirect "
+			pp session
+
+
+			redirect '/bands'
 		else
 			session[:message] = {
 				success: false,
@@ -28,9 +39,18 @@ class UserController < ApplicationController
 		end
 	end
 
-	post '/register' do
-		user = User.find_by username: params[:username]
+	#SHOW REGISTER PAGE
+	get '/register' do
+		erb :register
+	end
 
+	#DO REGISTER PAGE
+	post '/register' do
+		puts "\n here is params in register"
+		pp params
+		user = User.find_by username: params[:username]
+		puts "\n here's the user we found"
+		puts user
 		if !user
 			user = User.new
 			user.username = params[:username]
@@ -45,7 +65,7 @@ class UserController < ApplicationController
 				message: "Welcome to the site, you are now logged in as #{user.username}"
 			}
 
-			redirect '/items'
+			redirect '/bands'
 
 		else
 			session[:message] = {
@@ -55,10 +75,10 @@ class UserController < ApplicationController
 			}
 
 			redirect '/users/register'
-
 		end
 	end
 
+	#LOGOUT
 	get '/logout' do
 		username = session[:username]
 		session.destroy

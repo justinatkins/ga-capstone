@@ -4,5 +4,5 @@ class Guitarist < ActiveRecord::Base
 
 
 
-	has_many :guitars, :through :instrument_choices # update this to use through table
+	has_many :guitars, through: :instrument_choices # update this to use through table
 end

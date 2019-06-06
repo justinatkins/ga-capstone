@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Guitarmy</title>
+	<link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<a href="/bands">Bands</a>
+		</nav>
+
+		<nav>
+			<% if session[:logged_in] %>
+				Logged in as <%= session[:username] %>
+				<a href="/users/logout">Log Out</a>
+			<% else %>
+				<a href="/users/login">Log In</a> |
+				<a href="/users/register">Register</a>
+			<% end %>
+		</nav>
+	</header>
+
+	<% if session[:message] %>
+		<p class="message <%= session[:message][:status] %>"><%= session[:message][:message] %></p>
+	<%
+		end
+		session[:message] = nil 
+	%>
+
+	<%= yield %>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

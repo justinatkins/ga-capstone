@@ -1,4 +1,4 @@
-class GuitarController < Sinatra::Base
+class GuitarController < ApplicationController
 before do 
 		puts "filter is running"
 		if !session[:logged_in]

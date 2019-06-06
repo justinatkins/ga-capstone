@@ -2,6 +2,8 @@ require 'sinatra/base'
 
 require './controllers/ApplicationController'
 require './controllers/UserController'
+require './controllers/BandController'
+
 
 require './models/UserModel'
 require './models/BandModel'
@@ -17,3 +19,6 @@ map ('/users') {
 	run UserController
 }
 
+map ('/bands') {
+	run BandController
+}
