@@ -2,10 +2,10 @@
 <form action="/guitars/<%= @guitar.id %>" method="POST">
 	<input type="hidden" name="_method" value="PUT" />
 	<input type="url" name="guitar_url" value="<%= @guitar.guitar_url %>" /></br>
-	<input type="month" name="guitar_year" value="<%= @guitar.guitar_year %>" /></br>
-	<input type="text" name="guitar_make" value="<%= @guitar.guitar_make %>" /></br>
-	<input type="text" name="guitar_model" value="<%= @guitar.guitar_model %>" /></br>
-	<input type="text" name="guitar_finish" value="<%= @guitar.guitar_finish %>" /></br>
+	<input type="text" name="year" value="<%= @guitar.year %>" /></br>
+	<input type="text" name="make" value="<%= @guitar.make %>" /></br>
+	<input type="text" name="model" value="<%= @guitar.model %>" /></br>
+	<input type="text" name="finish" value="<%= @guitar.finish %>" /></br>
 		<button>Update Guitar!</button>
 </form>
 
