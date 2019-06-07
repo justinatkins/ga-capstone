@@ -20,6 +20,7 @@ class GuitaristController < ApplicationController
 
 	#New Guitarists
 	get '/new' do 
+		@bands = Band.all
 		erb :guitarist_new
 	end
 
@@ -29,8 +30,16 @@ class GuitaristController < ApplicationController
 		new_guitarist.guitarist_url = params[:guitarist_url]
 		new_guitarist.name = params[:name]
 
+
+
+
 		logged_in_user = User.find_by({:username => session[:username]})
 		new_guitarist.user_id = logged_in_user.id
+
+		# band id
+
+
+
 		new_guitarist.save
 
 		# session[:message] = {
@@ -49,6 +58,10 @@ class GuitaristController < ApplicationController
 	#Edit Guitarists
 	get '/:id/edit' do
 		@guitarist = Guitarist.find params[:id]
+		@band = Band.all
+		# get all guitars (later: mayer limit to the ones added by logged in user), 
+		# so you can make checkboxes on guitarist edit
+		@guitars = Guitar.all
 		erb :guitarist_edit
 	end
 
@@ -59,6 +72,12 @@ class GuitaristController < ApplicationController
 		guitarist_update.name = params[:name]
 		guitarist_update.save
 		
+		# GET GUITAR IDS FROM TEMPLATE, 
+		# FOR EACH GUITAR ID:
+			# CREATE ENTRY IN THRU TABLE WITH THIS GUIITARIST ID AND THAT GUITAR ID
+
+
+
 		session[:message] = {
 			success: true,
 			status: "good",

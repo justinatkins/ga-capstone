@@ -4,5 +4,11 @@
 	<input type="text" name="name" placeholder="name" /></br>
 	Guitarist Pic URL:
 	<input type="url" name="guitarist_url" placeholder="pic url" /></br>
+
+	<select name="band_id">
+		<% @bands.each do |band_name| %>
+			<option value="<%=band_name[:id]%>"><%=band_name[:band_name]%></option>
+		<% end %>
+	</select>
 		<button>Add Guitarist!</button>
 </form>

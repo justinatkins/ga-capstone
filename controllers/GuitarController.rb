@@ -21,6 +21,7 @@ class GuitarController < ApplicationController
 
 	#New Guitars
 	get '/new' do
+		
 		erb :guitar_new	
 	end
 

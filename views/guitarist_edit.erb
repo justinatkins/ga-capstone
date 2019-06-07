@@ -5,7 +5,14 @@
 	<input type="text" name="name" value="<%= @guitarist.name %>" /></br>
 	Guitarist Pic:
 	<input type="url" name="guitarist_url" value="<%= @guitarist.guitarist_url %>" /></br>
-		<button>Update Guitarist!</button>
+	<select name="band_id">
+		<% @band.each do |band_name| %>
+			<option value="<%=band_name[:id]%>"><%=band_name[:band_name]%></option>
+		<% end %>
+	</select>
+	CHECKBOXES
+
+	<button>Update Guitarist!</button>
 </form> 
 
 
