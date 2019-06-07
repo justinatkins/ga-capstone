@@ -1,13 +1,13 @@
 <h2>Guitar Index</h2>
 <a href="/guitars/new">Add Guitar</a>
 <ul>
-	<% @guitar.each do	|guitar| %>
+	<% @guitars.each do	|guitar| %>
 	<li>
-		<%= guitar.guitar_url %></br>
-		<%= guitar.guitar_year %></br>
-		<%= guitar.guitar_make %></br>
-		<%= guitar.guitar_model %></br>
-		<%= guitar.guitar_finish %></br>
+		<img src="<%= guitar.guitar_url %>"></img></br>
+		<%= guitar.year %></br>
+		<%= guitar.make %></br>
+		<%= guitar.model %></br>
+		<%= guitar.finish %></br>
 		<form action="/guitars/<%= guitar.id %>/edit" method="PUT">
 			<input type="hidden" name="_method" value="UPDATE">
 				<button>Edit Guitar</button>

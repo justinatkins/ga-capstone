@@ -14,7 +14,7 @@ class GuitarController < ApplicationController
 	#Index Guitars
 	get '/' do
 		user = User.find_by({ :username => session[:username] })
-		@guitar = user.guitars
+		@guitars = user.guitars
 
 		erb :guitar_index	
 	end
@@ -28,22 +28,22 @@ class GuitarController < ApplicationController
 	post '/new' do
 
 		new_guitar = Guitar.new
-		new_guitar.guitar_image = params[:guitar_image]
-		new_guitar.guitar_make = params[:guitar_name]
-		new_guitar.guitar_model = params[:guitar_model]
-		new_guitar.guitar_year = params[:guitar_year]
-		new_guitar.guitar_finish = params[:guitar_finish]
+		new_guitar.guitar_url = params[:guitar_url]
+		new_guitar.year = params[:year]
+		new_guitar.make = params[:make]
+		new_guitar.model = params[:model]
+		new_guitar.finish = params[:finish]
 
 
 		logged_in_user = User.find_by({:username => session[:username]})
 		new_guitar.user_id = logged_in_user.id
 		new_guitar.save
 
-		session[:message] = {
-			success: true,
-			status: "good",
-			message: "#{guitar_name} has been added."
-		}
+		# session[:message] = {
+		# 	success: true,
+		# 	status: "good",
+		# 	message: "#{guitar_name} has been added."
+		# }
 		redirect '/guitars'
 	end
 
@@ -61,11 +61,11 @@ class GuitarController < ApplicationController
 	#Update Guitars
 	put '/:id' do
 		guitar_update = Guitar.find params[:id]
-		guitar_update.guitar_image = params[:guitar_image]
-		guitar_update.guitar_make = params[:guitar_name]
-		guitar_update.guitar_model = params[:guitar_model]
-		guitar_update.guitar_year = params[:guitar_year]
-		guitar_update.guitar_finish = params[:guitar_finish]
+		guitar_update.guitar_url = params[:guitar_url]
+		guitar_update.make = params[:make]
+		guitar_update.model = params[:model]
+		guitar_update.year = params[:year]
+		guitar_update.finish = params[:finish]
 		guitar_update.save
 
 		session[:message] = {
@@ -78,7 +78,7 @@ class GuitarController < ApplicationController
 
 	#Destroy Guitars
 	delete '/:id' do 
-		recipe = guitar.find params[:id]
+		guitar = Guitar.find params[:id]
 		guitar.destroy
 
 		session[:message] = {
@@ -87,9 +87,5 @@ class GuitarController < ApplicationController
 			message: "Guitar deleted."
 		}
 		redirect '/guitars'
-	end
-
-	after do
-		puts "after filter is running"
 	end
 end
