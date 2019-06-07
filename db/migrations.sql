@@ -11,17 +11,18 @@ CREATE TABLE users(
 
 CREATE TABLE bands(
 	id SERIAL PRIMARY KEY, 
-	band_url VARCHAR(2000),
+	band_url VARCHAR(4000),
 	band_name VARCHAR(256),
 	user_id INTEGER REFERENCES users(id)
 );
+
 
 CREATE TABLE guitarists(
 	id SERIAL PRIMARY KEY,
 	guitarist_url VARCHAR(2000),
 	name VARCHAR(128),
-	user_id INTEGER REFERENCES users(id)
-	band_id VARCHAR(60) REFERENCES bands(id), -- guitarist belongs to band
+	user_id INTEGER REFERENCES users(id),
+	band_id INTEGER REFERENCES bands(id) -- guitarist belongs to band
 );
 
 CREATE TABLE guitars(

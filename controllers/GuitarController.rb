@@ -1,15 +1,15 @@
 class GuitarController < ApplicationController
-before do 
-		puts "filter is running"
-		if !session[:logged_in]
+# before do 
+# 		puts "filter is running"
+# 		if !session[:logged_in]
 
-			session[:message] = {
-				success: false,
-				status: "bad",
-				message: "Sorry, you must be logged in to do that"
-			}
-			redirect '/users/login'
-	end
+# 			session[:message] = {
+# 				success: false,
+# 				status: "bad",
+# 				message: "Sorry, you must be logged in to do that"
+# 			}
+# 			redirect '/users/login'
+# 	end
 
 	#Index Guitars
 	get '/' do
@@ -49,7 +49,7 @@ before do
 
 	#Show Guitars
 	get '/guitars' do
-		erb :guitars
+		erb :guitar_index
 	end
 
 	#Edit Guitars

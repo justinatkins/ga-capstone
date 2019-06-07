@@ -1,22 +1,20 @@
 <h2>Guitarist Index</h2>
-<ul class="list-group">
-	<% @guitarist.each do |guitarist| %>
+<a href="/guitarists/new">Add Guitarist</a>
+<ul>
+	<% @guitarists.each do |guitarist| %>
 	<li>
-		<%= @guitarist.guitarist_url %>
-		<%= @guitarist.name %>
+		<%= guitarist.name %>
+		<img src="<%= guitarist.guitarist_url %>"></img></br>
 		<form action="/guitarists/<%= guitarist.id %>/edit" method="PUT">
 			<input type="hidden" name="_method" value="UPDATE">
 				<button>Edit Guitarist</button>
 		</form>
-		<form action="/guitarist/<%= guitarist.id %>" method="PUT">
+		<form action="/guitarists/<%= guitarist.id %>" method="POST">
 			<input type="hidden" name="_method" value="DELETE">
-				<button>Delete Guitarist</button>
+				<button>Delete</button>
 		</form>
 	</li>
 	<% end %>
 </ul>
-
-
-
 
 		
