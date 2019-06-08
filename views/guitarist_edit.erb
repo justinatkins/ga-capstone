@@ -5,14 +5,23 @@
 	<input type="text" name="name" value="<%= @guitarist.name %>" /></br>
 	Guitarist Pic:
 	<input type="url" name="guitarist_url" value="<%= @guitarist.guitarist_url %>" /></br>
+	Band:
 	<select name="band_id">
 		<% @band.each do |band_name| %>
 			<option value="<%=band_name[:id]%>"><%=band_name[:band_name]%></option>
 		<% end %>
-	</select>
-	CHECKBOXES
+	</select></br>
+	Guitars:
+	<select name="guitar_id">
+		<% @guitar.each do |guitar| %>
+			<option value="<%=guitar[:id]%>"><%=guitar[:make]%>  <%=guitar[:model]%></option>
+		<% end %>
+	</select></br>
+	
+	
+
+	<!-- CHECKBOXES -->
 
 	<button>Update Guitarist!</button>
 </form> 
-
 
