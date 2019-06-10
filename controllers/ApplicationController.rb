@@ -22,7 +22,8 @@ class ApplicationController < Sinatra::Base
 
 
 	get '/' do
-		redirect '/bands'
+		redirect '/home'
+		erb :home
 	end
 
 	get '/test' do
@@ -33,5 +34,6 @@ class ApplicationController < Sinatra::Base
 
 	get '*' do
 		halt 404
+		erb :error_404
 	end
 end

@@ -30,7 +30,7 @@ class BandController < ApplicationController
 
 	#New Bands
 	get '/new' do
-		@guitarists = Guitarist.all
+		# @guitarists = Guitarist.all
 		erb :band_new	
 	end
 
@@ -44,8 +44,8 @@ class BandController < ApplicationController
 		logged_in_user = User.find_by({:username => session[:username]})
 		new_band.user_id = logged_in_user.id
 
-		
-		new_band.guitarist_id = logged_in_user.id
+
+		# new_band.guitarist_id = logged_in_user.id
 
 		new_band.save
 

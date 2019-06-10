@@ -1,5 +1,5 @@
 <h2>Bands Index</h2>
-<a href="/bands/new">Add Band</a>
+
 <ul>
 	<% @bands.each do |band| 
 			# pp band
@@ -10,12 +10,18 @@
 			
 		<form action="/bands/<%= band.id %>/edit" method="PUT">
 			<input type="hidden" name="_method" value="UPDATE">
-				<button>Edit Band</button>
+				<button>Edit Info</button>
 		</form>
 		<form action="/bands/<%= band.id %>" method="POST">
 			<input type="hidden" name="_method" value="DELETE">
-				<button>Delete Band</button>
+				<button>Delete</button>
 		</form>
 	</li>
 	<% end %>
+
+
+<div style="text-align:center">    
+  <a href="/bands/new" style="text-align:center">Add Band</a>
+</div>
+
 </ul>

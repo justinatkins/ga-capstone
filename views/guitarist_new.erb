@@ -1,16 +1,16 @@
 <h2>Add A New Guitarist</h2>
 <form action="new" method="POST">
-	Name: 
+	Name:</br>
 	<input type="text" name="name" placeholder="name" /></br>
-	Guitarist Pic URL:
+	Guitarist Pic:</br>
 	<input type="url" name="guitarist_url" placeholder="pic url" /></br>
-	Band:
+	Band:</br>
 	<select name="band_id">
 		<% @bands.each do |band_name| %>
 			<option value="<%=band_name[:id]%>"><%=band_name[:band_name]%></option>
 		<% end %>
 	</select></br>
-	Guitars:
+	Guitars:</br>
 	<%@guitars.each do |guitar|%>
 		<input type="checkbox" name="guitar_id[]" value="<%=guitar.id%>" id="<%=guitar.id%>">
 		<%=guitar.make%> <%=guitar.model%></input>
