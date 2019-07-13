@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './hello'
+run Sinatra::Application
 
 #CONTROLLERS
 require './controllers/ApplicationController'
