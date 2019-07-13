@@ -30,7 +30,7 @@ class BandController < ApplicationController
 
 	#New Bands
 	get '/new' do
-		# @guitarists = Guitarist.all
+		@guitarists = Guitarist.all
 		erb :band_new	
 	end
 

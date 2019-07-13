@@ -10,10 +10,7 @@
 			<option value="<%=band_name[:id]%>"><%=band_name[:band_name]%></option>
 		<% end %>
 	</select></br>
-	Guitars:</br>
-	<%@guitars.each do |guitar|%>
-		<input type="checkbox" name="guitar_id[]" value="<%=guitar.id%>" id="<%=guitar.id%>">
-		<%=guitar.make%> <%=guitar.model%></input>
-	<% end %>
+
+	
 		<button>Add Guitarist!</button>
 </form>

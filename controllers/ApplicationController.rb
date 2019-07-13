@@ -22,8 +22,8 @@ class ApplicationController < Sinatra::Base
 
 
 	get '/' do
-		redirect '/home'
-		erb :home
+		redirect '/'
+		# erb :home
 	end
 
 	get '/test' do
@@ -31,6 +31,10 @@ class ApplicationController < Sinatra::Base
 		binding.pry
 		"Pry finished. #{test_text}"
 	end
+
+	get '/404' do
+		erb :error_404
+	end 
 
 	get '*' do
 		halt 404

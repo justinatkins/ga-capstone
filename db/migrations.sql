@@ -23,7 +23,8 @@ CREATE TABLE guitarists(
 	name VARCHAR(128),
 	user_id INTEGER REFERENCES users(id),
 	band_id INTEGER REFERENCES bands(id) -- guitarist belongs to band
-);
+	-- guitar_id INTEGER REFERENCES guitars(id)
+);	
 
 CREATE TABLE guitars(
 	id SERIAL PRIMARY KEY,

@@ -38,9 +38,9 @@ class GuitaristController < ApplicationController
 		new_guitarist.user_id = logged_in_user.id
 
 		# band id
-		new_guitarist.band_id = logged_in_user.id
-		new_guitarist.guitar_id = logged_in_user.id
-
+		# new_guitarist.band_id = logged_in_user.id
+		# guitar_ids= guitar_ids 
+		# new_guitarist.guitar_id = logged_in_user.id
 
 		new_guitarist.save
 
