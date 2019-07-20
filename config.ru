@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require './hello'
-# require '.guitarmy'
+# require 'ga-capstone'
 run Sinatra::Application
 
 #CONTROLLERS

@@ -5,6 +5,7 @@ group :production do
   gem "puma"
 end
 
+gem 'unicorn'
 gem 'sinatra'
 gem 'pry'
 gem 'pg'
