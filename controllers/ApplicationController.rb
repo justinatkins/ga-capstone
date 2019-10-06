@@ -40,4 +40,14 @@ class ApplicationController < Sinatra::Base
 		halt 404
 		erb :error_404
 	end
+
+	#Configure Carrierwave
+	CarrierWave.configure do |config|
+  		config.root = File.dirname(__FILE__) + "/public"
+	end
+
 end
+
+
+
+

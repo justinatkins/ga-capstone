@@ -1,4 +1,8 @@
 require 'sinatra/base'
+require 'bundler/setup'
+require 'sinatra/activerecord'
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
 require './hello'
 # require 'ga-capstone'
 run Sinatra::Application

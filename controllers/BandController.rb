@@ -23,6 +23,7 @@ class BandController < ApplicationController
 
 		user = User.find_by({ :username => session[:username] })
 		@bands = user.bands
+		# @images = Image.all
 
 		pp @bands
 		erb :band_index	
@@ -39,6 +40,11 @@ class BandController < ApplicationController
 
 		new_band = Band.new
 		new_band.band_url = params[:band_url]
+		puts 'this is the band url -------'
+		puts new_band.band_url
+		puts '^^^^^^^^^^^^^^^^^'
+	
+
 		new_band.band_name = params[:band_name]
 
 		logged_in_user = User.find_by({:username => session[:username]})
@@ -54,6 +60,19 @@ class BandController < ApplicationController
 		# 	status: "good",
 		# 	message: "#{band_name} has been added."
 		# }
+
+		# #Create new Image Model
+  #     img = Image.new
+
+  #     #Save the data from the request
+  #     img.file    = params[:file] #carrierwave will upload the file automatically
+  #     img.caption = "This is the caption" #Or recieve it from params
+
+  #     #Save
+  #     img.save!
+
+  #     # #Redirect to view
+  #     # redirect to("/")
 
 		redirect '/bands'
 	end
