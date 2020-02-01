@@ -7,6 +7,8 @@ GEM
     activerecord (6.0.0)
       activemodel (= 6.0.0)
       activesupport (= 6.0.0)
+    activerecord-refresh_connection (0.0.5)
+      activerecord
     activesupport (6.0.0)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
@@ -307,7 +309,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt
+  activerecord-refresh_connection (~> 0.0.5)
+  bcrypt (~> 3.1.13)
   carrierwave (~> 2.0.1)
   fog
   json
@@ -322,4 +325,4 @@ RUBY VERSION
    ruby 2.6.3p62
 
 BUNDLED WITH
-   2.0.2
+   2.1.4

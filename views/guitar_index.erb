@@ -9,7 +9,7 @@
 		<%= guitar.finish %></br>
 		<form action="/guitars/<%= guitar.id %>/edit" method="PUT">
 			<input type="hidden" name="_method" value="UPDATE">
-				<button>Edit Guitar</button>
+				<button>Edit</button>
 		</form>
 		<form action="/guitars/<%= guitar.id %>" method="POST">
 			<input type="hidden" name="_method" value="DELETE">
@@ -18,6 +18,7 @@
 	</li>
 	<% end %>
 </ul>
-<div style="text-align:center">  
-<a href="/guitars/new">Add Guitar</a>
+<div style="text-align:center">    
+  <a href="/guitars/new" style="text-align:center" font size="+2" class="btn btn-primary">Add Guitar</a>
 </div>
+

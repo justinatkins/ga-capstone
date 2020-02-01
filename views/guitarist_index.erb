@@ -6,7 +6,7 @@
 		<img src="<%= guitarist.guitarist_url %>"></img></br>
 		<form action="/guitarists/<%= guitarist.id %>/edit" method="PUT">
 			<input type="hidden" name="_method" value="UPDATE">
-				<button>Edit Guitarist</button>
+				<button>Edit</button>
 		</form>
 		<form action="/guitarists/<%= guitarist.id %>" method="POST">
 			<input type="hidden" name="_method" value="DELETE">
@@ -15,7 +15,7 @@
 	</li>
 	<% end %>
 </ul>
-<div style="text-align:center">  
-<a href="/guitarists/new">Add Guitarist</a>
+<div style="text-align:center">    
+  <a href="/guitarists/new" style="text-align:center" font size="+2" class="btn btn-primary">Add Guitarist</a>
 </div>
 		

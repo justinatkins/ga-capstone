@@ -1,11 +1,21 @@
 <h2>Add A New Band</h2>
 
-<form action="new" method="POST" enctype="multipart/form-data">
-	Band Photo:
-	<input type="file" name="band_url" class="form-control"></br>
-	<input type="file" name="file" class="form-control"></br>
+<form action="new" method="POST">
 	Band Name:</br>
 	<input type="text" name="band_name" placeholder="band name" /></br>
-	<input type="submit" value="upload image">
+	Pic URL:</br>
+	<input type="text" name="band_url" placeholder="band pic url" /></br> 
+		<button>Add</button>
+
+		
+</form>
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+  </div>
 </form>
 
+<!-- <div style="text-align:center">    
+  <a href="/guitarists/new" style="text-align:center" font size="+2" class="btn btn-primary">Add</a>
+</div> -->
